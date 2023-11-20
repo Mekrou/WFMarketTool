@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6Tf39R/4O5XECdgX4prBKkHLqO1Qj0loVNNdKWId4di/vTiaHTyZVCr0ETAivM20wj3bIjuGrbXyFVrdYzNQgA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mills\\source\\repos\\WFMarketTool\\WFMarketTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mills\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}

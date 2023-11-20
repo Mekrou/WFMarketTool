@@ -1,0 +1,17 @@
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\WFMarketTool.exe
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\WFMarketTool.deps.json
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\WFMarketTool.runtimeconfig.json
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\WFMarketTool.dll
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\WFMarketTool.pdb
+C:\Users\mills\source\repos\WFMarketTool\bin\Debug\net6.0\CommandLine.dll
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.csproj.AssemblyReference.cache
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.AssemblyInfoInputs.cache
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.AssemblyInfo.cs
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.csproj.CoreCompileInputs.cache
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.csproj.CopyComplete
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.dll
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\refint\WFMarketTool.dll
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.pdb
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\WFMarketTool.genruntimeconfig.cache
+C:\Users\mills\source\repos\WFMarketTool\obj\Debug\net6.0\ref\WFMarketTool.dll
