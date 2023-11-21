@@ -7,6 +7,7 @@ using WFMarketTool;
 using DustInTheWind.ConsoleTools.Controls.InputControls;
 using DustInTheWind.ConsoleTools;
 using DustInTheWind.ConsoleTools.Controls;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
@@ -61,6 +62,22 @@ class Program
             {
                 Environment.Exit(0);
             }
+
+            Console.Clear();
+            CustomConsole.WriteEmphasized("Enter your password and then press Enter\n");
+            string pass = Console.ReadLine();
+
+            CustomConsole.WriteEmphasized("Enter your email and then press Enter\n");
+            string email = Console.ReadLine();
+
+
+            string credentialsString = JsonConvert.SerializeObject(new
+            {
+                Password = pass,
+                Email = email
+            });
+
+            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Credentials.json"), credentialsString);
         }
 
 
