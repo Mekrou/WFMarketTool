@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "6Tf39R/4O5XECdgX4prBKkHLqO1Qj0loVNNdKWId4di/vTiaHTyZVCr0ETAivM20wj3bIjuGrbXyFVrdYzNQgA==",
+  "dgSpecHash": "jJwPNMpLgTvm23GMdlGAkF7NFIUla7QB3OANPAGH+zd5YESC9es0n6CPpgZH8ebpnolrcXiwynLT0i4r6/0bzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mills\\source\\repos\\WFMarketTool\\WFMarketTool.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mills\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512"
+    "C:\\Users\\mills\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
+    "C:\\Users\\mills\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\mills\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\mills\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
+    "C:\\Users\\mills\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
