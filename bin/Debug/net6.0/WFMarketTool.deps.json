@@ -9,6 +9,7 @@
       "WFMarketTool/1.0.0": {
         "dependencies": {
           "CommandLineParser": "2.9.1",
+          "ConsoleTools": "1.1.1",
           "Newtonsoft.Json": "13.0.3",
           "Selenium.WebDriver": "4.15.0"
         },
@@ -21,6 +22,91 @@
           "lib/netstandard2.0/CommandLine.dll": {
             "assemblyVersion": "2.9.1.0",
             "fileVersion": "2.9.1.0"
+          }
+        }
+      },
+      "ConsoleTools/1.1.1": {
+        "dependencies": {
+          "ConsoleTools.Controls": "1.1.0",
+          "ConsoleTools.Controls.Menus": "1.1.0",
+          "ConsoleTools.Controls.Spinners": "1.1.0",
+          "ConsoleTools.Controls.Tables": "1.1.0",
+          "ConsoleTools.Core": "1.1.0"
+        }
+      },
+      "ConsoleTools.Controls/1.1.0": {
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Menus/1.1.0": {
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Menus.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Spinners/1.1.0": {
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Spinners.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Tables/1.1.0": {
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Tables.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "ConsoleTools.Core/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Core.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
           }
         }
       },
@@ -93,6 +179,48 @@
       "sha512": "sha512-OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
       "path": "commandlineparser/2.9.1",
       "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
+    },
+    "ConsoleTools/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yVbN1achbqcc6dQTwwfWBWeyPPzIJOhtpxOF9yURuJoWXNU3Q9Rcl4y5TTH0ukb8ya11hLzXDU9zIOpPgQU19A==",
+      "path": "consoletools/1.1.1",
+      "hashPath": "consoletools.1.1.1.nupkg.sha512"
+    },
+    "ConsoleTools.Controls/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K7cLJvA0teDdWpK9Yua/J4mnX5cJWNPqL7HBhWIZHB4HnHRL2fMZ8CFZQDD8LFOdb+ljn8knss8daA1LJIi46g==",
+      "path": "consoletools.controls/1.1.0",
+      "hashPath": "consoletools.controls.1.1.0.nupkg.sha512"
+    },
+    "ConsoleTools.Controls.Menus/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nNZnXM3uFfPBvJ0FpSg544MCv9CIxzVagOacgNupkJlUoTOsOYe1/mtJ9AX0QxjqHfUhxvyY+4oTZE5ZcTh6sQ==",
+      "path": "consoletools.controls.menus/1.1.0",
+      "hashPath": "consoletools.controls.menus.1.1.0.nupkg.sha512"
+    },
+    "ConsoleTools.Controls.Spinners/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SLd2vurCF/60OHYNsQk3v+QsdlRd4F9BHFwt0AqvIDSXOsKUYu++ThH/uvMz6QEoZ2E0u9MXnTnJSkBDddjLvw==",
+      "path": "consoletools.controls.spinners/1.1.0",
+      "hashPath": "consoletools.controls.spinners.1.1.0.nupkg.sha512"
+    },
+    "ConsoleTools.Controls.Tables/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ex7wfDvBakQ95QVtxLKnR/2zzFaccFrPyomNOeDo2EOkwIpTn5uG75AKJduqQyC/XDwNgvfiad4lot8XGcfH9Q==",
+      "path": "consoletools.controls.tables/1.1.0",
+      "hashPath": "consoletools.controls.tables.1.1.0.nupkg.sha512"
+    },
+    "ConsoleTools.Core/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/WQZqJGiVdlxzFidQ1IckKNuO1TkKRVDNaVXYi4qZHV8JehE5aOqfS2zEcq4MqCEQtAWfbcgqn8V4HZe3L+8Qw==",
+      "path": "consoletools.core/1.1.0",
+      "hashPath": "consoletools.core.1.1.0.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",

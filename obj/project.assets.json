@@ -15,6 +15,117 @@
           }
         }
       },
+      "ConsoleTools/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "ConsoleTools.Controls": "1.1.0",
+          "ConsoleTools.Controls.Menus": "1.1.0",
+          "ConsoleTools.Controls.Spinners": "1.1.0",
+          "ConsoleTools.Controls.Tables": "1.1.0",
+          "ConsoleTools.Core": "1.1.0"
+        }
+      },
+      "ConsoleTools.Controls/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Menus/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Menus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Menus.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Spinners/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Spinners.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Spinners.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
+      "ConsoleTools.Controls.Tables/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ConsoleTools.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Tables.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ConsoleTools.Core/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DustInTheWind.ConsoleTools.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
@@ -118,6 +229,100 @@
         "lib/net461/CommandLine.xml",
         "lib/netstandard2.0/CommandLine.dll",
         "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
+    "ConsoleTools/1.1.1": {
+      "sha512": "yVbN1achbqcc6dQTwwfWBWeyPPzIJOhtpxOF9yURuJoWXNU3Q9Rcl4y5TTH0ukb8ya11hLzXDU9zIOpPgQU19A==",
+      "type": "package",
+      "path": "consoletools/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "consoletools.1.1.1.nupkg.sha512",
+        "consoletools.nuspec",
+        "readme.md"
+      ]
+    },
+    "ConsoleTools.Controls/1.1.0": {
+      "sha512": "K7cLJvA0teDdWpK9Yua/J4mnX5cJWNPqL7HBhWIZHB4HnHRL2fMZ8CFZQDD8LFOdb+ljn8knss8daA1LJIi46g==",
+      "type": "package",
+      "path": "consoletools.controls/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletools.controls.1.1.0.nupkg.sha512",
+        "consoletools.controls.nuspec",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.dll",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.xml",
+        "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.resources.dll",
+        "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.resources.dll"
+      ]
+    },
+    "ConsoleTools.Controls.Menus/1.1.0": {
+      "sha512": "nNZnXM3uFfPBvJ0FpSg544MCv9CIxzVagOacgNupkJlUoTOsOYe1/mtJ9AX0QxjqHfUhxvyY+4oTZE5ZcTh6sQ==",
+      "type": "package",
+      "path": "consoletools.controls.menus/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletools.controls.menus.1.1.0.nupkg.sha512",
+        "consoletools.controls.menus.nuspec",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Menus.dll",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Menus.xml",
+        "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll",
+        "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Menus.resources.dll"
+      ]
+    },
+    "ConsoleTools.Controls.Spinners/1.1.0": {
+      "sha512": "SLd2vurCF/60OHYNsQk3v+QsdlRd4F9BHFwt0AqvIDSXOsKUYu++ThH/uvMz6QEoZ2E0u9MXnTnJSkBDddjLvw==",
+      "type": "package",
+      "path": "consoletools.controls.spinners/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletools.controls.spinners.1.1.0.nupkg.sha512",
+        "consoletools.controls.spinners.nuspec",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Spinners.dll",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Spinners.xml",
+        "lib/netstandard2.0/fr/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll",
+        "lib/netstandard2.0/ro/DustInTheWind.ConsoleTools.Controls.Spinners.resources.dll"
+      ]
+    },
+    "ConsoleTools.Controls.Tables/1.1.0": {
+      "sha512": "ex7wfDvBakQ95QVtxLKnR/2zzFaccFrPyomNOeDo2EOkwIpTn5uG75AKJduqQyC/XDwNgvfiad4lot8XGcfH9Q==",
+      "type": "package",
+      "path": "consoletools.controls.tables/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletools.controls.tables.1.1.0.nupkg.sha512",
+        "consoletools.controls.tables.nuspec",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Tables.dll",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Controls.Tables.xml"
+      ]
+    },
+    "ConsoleTools.Core/1.1.0": {
+      "sha512": "/WQZqJGiVdlxzFidQ1IckKNuO1TkKRVDNaVXYi4qZHV8JehE5aOqfS2zEcq4MqCEQtAWfbcgqn8V4HZe3L+8Qw==",
+      "type": "package",
+      "path": "consoletools.core/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletools.core.1.1.0.nupkg.sha512",
+        "consoletools.core.nuspec",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Core.dll",
+        "lib/netstandard2.0/DustInTheWind.ConsoleTools.Core.xml"
       ]
     },
     "Microsoft.Win32.SystemEvents/7.0.0": {
@@ -242,6 +447,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "CommandLineParser >= 2.9.1",
+      "ConsoleTools >= 1.1.1",
       "Newtonsoft.Json >= 13.0.3",
       "Selenium.WebDriver >= 4.15.0"
     ]
@@ -293,6 +499,10 @@
           "CommandLineParser": {
             "target": "Package",
             "version": "[2.9.1, )"
+          },
+          "ConsoleTools": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

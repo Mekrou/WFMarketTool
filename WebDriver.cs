@@ -9,10 +9,12 @@ namespace WFMarketTool
     public class WebDriver
     {
         private IWebDriver driver;
+        private bool isLoggedIn { get; set; }
 
         public WebDriver()
         {
             this.driver = new FirefoxDriver();
+            this.isLoggedIn = false;
 
             // Driver must wait because it is much faster than the browser. Trying to get an element that isn't there will be hard.
             this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(25);
@@ -26,6 +28,7 @@ namespace WFMarketTool
 
             Console.ReadLine();
 
+            // At some point, this will break..
             jsExecutor.ExecuteScript("document.querySelector(\".btn.btn__primary--L8HyD\").click()");
             
 
@@ -53,6 +56,10 @@ namespace WFMarketTool
                     if (credentials != null)
                     {
                         Console.WriteLine($"Password {credentials.Password}\nEmail {credentials.Email}");
+                        emailInput.SendKeys(credentials.Email);
+                        passInput.SendKeys(credentials.Password);
+                        PressLoginButton();
+                        isLoggedIn = true;
                     }
                     else
                     {
@@ -76,5 +83,16 @@ namespace WFMarketTool
                 passInput.SendKeys(pass);
             }
         }
+
+        private void PressLoginButton()
+        {
+            IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
+            IWebElement button = (IWebElement)jsExecutor.ExecuteScript("return document.querySelector(\".btn.btn__primary--L8HyD\")");
+            button.Click();
+            // At some point, this will break..
+            jsExecutor.ExecuteScript("document.querySelector(\".btn.btn__primary--L8HyD\").click()");
+        }
+
+       
     }
 }

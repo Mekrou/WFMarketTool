@@ -1,12 +1,20 @@
 ﻿using CommandLine;
 using Newtonsoft.Json;
-using System.Net.Http.Json;
 using System.Text;
 using WFMarketTool;
 
 
+using DustInTheWind.ConsoleTools.Controls.InputControls;
+using DustInTheWind.ConsoleTools;
+using DustInTheWind.ConsoleTools.Controls;
+
 class Program
 {
+    public class Config
+    {
+
+    }
+
 
     public class Options
     {
@@ -24,61 +32,79 @@ class Program
 
     static void Main(string[] args)
     {
+        CustomConsole.WriteLine(HorizontalAlignment.Center, "Welcome to WFMarketTool");
+        HorizontalLine titleLine = new HorizontalLine
+        {
+            Character = '*',
+            ForegroundColor = ConsoleColor.Cyan,
+            Margin = "0 0",
+        };
+        titleLine.Display();
         HttpClient client = new HttpClient();
         string tokenJson = File.ReadAllText("token.json");
         TokenModel token = JsonConvert.DeserializeObject<TokenModel>(tokenJson);
 
-        WebDriver webDriver = new WebDriver();
-        webDriver.Login();
+        //WebDriver webDriver = new WebDriver();
+        //webDriver.Login();
 
-        Parser.Default.ParseArguments<Options>(args)
-               .WithParsed<Options>(async o =>
-               {
-                   if (o.Verbose)
-                   {
-                       Console.WriteLine("App is in Verbose mode!");
-                   }
-                   else
-                   {
-                       Console.WriteLine($"Current Arguments: -v {o.Verbose}");
-                   }
+        client.DefaultRequestHeaders.Add("Authorization", $"JWT {token.Token}");
+        client.Timeout = TimeSpan.FromSeconds(15);
 
-
-                   //if (o.Product != null)
-                   if (true)
-                   {
-                       Console.WriteLine("Do something to WF market here!");
-
-                       string authPayload = JsonConvert.SerializeObject(new
-                       {
-                           auth_type = "cookie",
-                           email = "email",
-                           password = "password",
-                           device_id = "pc"
-                       });
-
-                       client.DefaultRequestHeaders.Add("Authorization", $"JWT {token.Token}");
-                       client.Timeout = TimeSpan.FromSeconds(15);
+        if (File.Exists("Credentials.json"))
+        {
+            Console.WriteLine("Credentials.json found!");
+        } else
+        {
+            YesNoQuestion yesNoQuestion = new YesNoQuestion("WFMarket credentials not detected. Would you like to enter them?");
+            YesNoAnswer answer = yesNoQuestion.ReadAnswer();
+            if (answer == YesNoAnswer.No)
+            {
+                Environment.Exit(0);
+            }
+        }
 
 
-                       HttpContent authContent = new StringContent(authPayload, Encoding.UTF8, "application/json");
-                       HttpResponseMessage response = await client.PostAsync("https://api.warframe.market/v1/auth/signin", authContent);
+            async Task TokenSignIn() {
+            string authPayload = JsonConvert.SerializeObject(new
+            {
+                auth_type = "cookie",
+                email = "email",
+                password = "password",
+                device_id = "pc"
+            });
+            HttpContent authContent = new StringContent(authPayload, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync("https://api.warframe.market/v1/auth/signin", authContent);
+            
 
-                       if (response.IsSuccessStatusCode)
-                       {
-                           Console.WriteLine("Should be logged in");
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Should be logged in");
 
-                           HttpResponseMessage getCurrentOrdersResponse = await client.GetAsync("https://api.warframe.market/v1/profile/orders");
-                           string responseBody = await getCurrentOrdersResponse.Content.ReadAsStringAsync();
-                           Console.WriteLine(responseBody);
-                       }
-                       else
-                       {
-                           Console.WriteLine(response.StatusCode);
-                       }
-                   }
-               });
+                HttpResponseMessage getCurrentOrdersResponse = await client.GetAsync("https://api.warframe.market/v1/profile/orders");
+                string responseBody = await getCurrentOrdersResponse.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong with WFMarket API authentication");
+            }
+        }
+        
 
+        //Parser.Default.ParseArguments<Options>(args)
+        //       .WithParsed<Options>(async o =>
+        //       {
+        //           if (o.Verbose)
+        //           {
+        //               Console.WriteLine("App is in Verbose mode!");
+        //           }
+        //           else
+        //           {
+        //               Console.WriteLine($"Current Arguments: -v {o.Verbose}");
+        //           }
+        //       });
+
+        Console.WriteLine("Reached end");
         Console.ReadLine();
     }
 }
