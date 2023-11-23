@@ -8,11 +8,23 @@ using Newtonsoft.Json.Linq;
 
 namespace WFMarketTool
 {
-    public class Credentials
+    public class CredentialModel
     {
         public string? Password { get; set; }
         public string? Email { get; set; }
+    }
 
-        public Credentials() { }
+    public class Credentials
+    {
+        public static string? password { get; set; }
+        public static string? email { get; set; }
+
+        public static void LoadCredentialsFromJson()
+        {
+            string jsonString = File.ReadAllText("Credentials.json");
+            CredentialModel credentials = JsonConvert.DeserializeObject<CredentialModel>(jsonString);
+            password = credentials.Password;
+            email = credentials.Email;
+        }
     }
 }

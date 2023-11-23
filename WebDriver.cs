@@ -50,14 +50,13 @@ namespace WFMarketTool
             {
                 try
                 {
-                    string jsonString = File.ReadAllText("Credentials.json");
-                    Credentials? credentials = JsonConvert.DeserializeObject<Credentials>(jsonString);
+                   
 
-                    if (credentials != null)
+                    if (Credentials.email != null)
                     {
-                        Console.WriteLine($"Password {credentials.Password}\nEmail {credentials.Email}");
-                        emailInput.SendKeys(credentials.Email);
-                        passInput.SendKeys(credentials.Password);
+                        Console.WriteLine($"Password {Credentials.password}\nEmail {Credentials.email}");
+                        emailInput.SendKeys(Credentials.email);
+                        passInput.SendKeys(Credentials.password);
                         PressLoginButton();
                         isLoggedIn = true;
                     }
