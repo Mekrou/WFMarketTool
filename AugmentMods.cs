@@ -23,6 +23,12 @@ namespace WFMarketTool
 
     public class Syndicate
     {
+        public Syndicate()
+        {
+            isTracked = false;
+            augmentMods = new List<AugmentMod> { };
+        }
+
         [JsonProperty("isTracked")]
         public bool isTracked { get; set; }
 
@@ -32,6 +38,12 @@ namespace WFMarketTool
 
     public class AugmentMod
     {
+        public AugmentMod()
+        {
+            ModName = string.Empty;
+            WFMarketID = string.Empty;
+        }
+
         [JsonProperty("modName")]
         public string ModName { get; set; }
         [JsonProperty("WFMarketID")]
