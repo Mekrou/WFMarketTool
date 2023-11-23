@@ -9,11 +9,9 @@ namespace WFMarketTool
         {
             string json = File.ReadAllText("AugmentsName.json");
 
-            AugmentMods augmentMods = JsonConvert.DeserializeObject<AugmentMods>(json);
+            OldSyndicates syndicates = JsonConvert.DeserializeObject<OldSyndicates>(json);
 
-            var convert = augmentMods.ThePerrinSeqeunce.ConvertAll(s => new AugmentMod(s));
 
-            foreach (var mod in convert) { Console.Write(mod); }
         }
     }
 }
