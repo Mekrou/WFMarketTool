@@ -1,0 +1,432 @@
+{
+    "New Loka": {
+        "isTracked": false,
+        "AugmentMods": [
+            {
+                "modName": "endless_lullaby",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "reactive_storm",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "duality",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "calm_and_frenzy",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "peaceful provocation",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "energy_transfer",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "shattered_storm",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "medning_splinters",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "spectrosiphon",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "corroding_barrage",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "tidal_impunity",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "curative_undertow",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "pilfering_swarm",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "swift_bite",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "greedy_pull",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "magnetized_discharge",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "counter_pulse",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "fracturing_crush",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "mind_freak",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "pacifying_bolts",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "chaos_sphere",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "assimilate",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "smite_infusion",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "hallowed_eruption",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "phoenix_renewal",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "hallowed_reckoning",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "partitioned_mallet",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "conductor",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "spellbound_harvest",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "beguiling_lantern",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "razorwing_blitz",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "ironclad_flight",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "pool_of_life",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "vampire_leech",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "abating_link",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "champions_blessing",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "swing_line",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "eternal_war",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "prolonged_paralysis",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "hyterical_assault",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "enraged",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "fused_reservoir",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "critical_surge",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "target_fixation",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "airburst_rounds",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "jet_stream",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "funnel_clouds",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "anchored_glide",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "celestial_stomp",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "enveloping_cloud",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "primal_rage",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "merulina_guardian",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "surging_blades",
+                "WFMarketID": "Default"
+            }
+        ]
+    },
+    "The Perrin Sequence": {
+        "isTracked": false,
+        "AugmentMods": [
+            {
+                "modName": "sonic_fracture",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "resonance",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "savage_silence",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "resonating_quake",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "afterburn",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "everlasting_ward",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "vexing_retaliation",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "guided_effigy",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "mach_crash",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "thermal_transfer",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "cathode_current",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "balefire_surge",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "blazing_pillage",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "dessiccations_curse",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "elemental_sandstorm",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "negation_swarm",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "empowered_quiver",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "piercing_navigator",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "infiltrate",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "concentrated_arrow",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "greedy_pull",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "magnetized_discharge",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "counter_pulse",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "fracturing_crush",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "soul_survivor",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "creeping_terrify",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "despoil",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "shield_of_shadows",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "teeming_virulence",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "larva_burst",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "insatiable",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "abundant_mutation",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "repair_dispensary",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "thrall_pact",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "mesmer_shield",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "blinding_reave",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "ironclad_charge",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "iron_sharpnel",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "piercing_roar",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "reinforcing_stomp",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "pool_of_life",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "vampire_leech",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "abating_link",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "champions_blessing",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "swing_line",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "eternal_war",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "prolonged_paralysis",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "hysterical_assault",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "enraged",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "tesla_bank",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "repelling_bastille",
+                "WFMarketID": "Default"
+            },
+            {
+                "modName": "photon_repeater",
+                "WFMarketID": "Default"
+            }
+        ]
+    }
+}
