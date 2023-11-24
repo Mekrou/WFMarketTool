@@ -8,6 +8,9 @@ using DustInTheWind.ConsoleTools;
 using DustInTheWind.ConsoleTools.Controls;
 using System.Runtime.CompilerServices;
 using System.IO;
+using static WFMarketTool.WFMarketJson;
+using Newtonsoft.Json.Linq;
+
 class Program
 {
     static void Log(string message,
@@ -38,6 +41,8 @@ class Program
 
     static void Main(string[] args)
     {
+        string apiBaseUrl = "https://api.warframe.market/v1";
+
         CustomConsole.WriteLine(HorizontalAlignment.Center, "Welcome to WFMarketTool");
         HorizontalLine titleLine = new HorizontalLine
         {
@@ -46,10 +51,11 @@ class Program
             Margin = "0 0",
         };
         titleLine.Display();
+        
         HttpClient client = new HttpClient();
+        
         string tokenJson = File.ReadAllText("token.json");
         TokenModel token = JsonConvert.DeserializeObject<TokenModel>(tokenJson);
-
         Credentials.LoadCredentialsFromJson();
 
         //WebDriver webDriver = new WebDriver();
@@ -89,15 +95,23 @@ class Program
             }
         }
 
-        void GetItemId()
+        async Task GetItemId()
         {
             try
             {
-                string augmentModsJson = File.ReadAllText("AugmentsName.json");
+                string syndicatesJson = File.ReadAllText("Syndicates.json");
 
                 // ReadAllText doesn't always throw an exception by default, so this redundancy is necessary.
-                if (augmentModsJson != null)
+                if (syndicatesJson != null)
                 {
+                    Syndicates syndicates = JsonConvert.DeserializeObject<Syndicates>(syndicatesJson);
+                    var perrinArray = syndicates.ThePerrinSeqeunce.augmentMods;
+                    HttpResponseMessage getItemData = await client.GetAsync($"https://api.warframe.market/v1/items/{perrinArray[0].ModName}");
+                    string json = await getItemData.Content.ReadAsStringAsync();
+                    JObject jsonObject = JObject.Parse(json);
+
+                    string itemId = (string)jsonObject["payload"]["item"]["id"];
+                    Log(itemId);
 
                 }
                 else
@@ -149,7 +163,6 @@ class Program
         //               Console.WriteLine($"Current Arguments: -v {o.Verbose}");
         //           }
         //       });
-        JsonTesting.ModifyJson();
 
         Log("Reached end");
         Console.ReadLine();
