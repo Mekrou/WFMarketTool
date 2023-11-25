@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
 using WFMarketTool;
-
 using DustInTheWind.ConsoleTools.Controls.InputControls;
 using DustInTheWind.ConsoleTools;
 using DustInTheWind.ConsoleTools.Controls;
@@ -15,7 +14,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        string apiBaseUrl = "https://api.warframe.market/v1";
+        
 
         CustomConsole.WriteLine(HorizontalAlignment.Center, "Welcome to WFMarketTool");
         HorizontalLine titleLine = new HorizontalLine
@@ -26,16 +25,21 @@ class Program
         };
         titleLine.Display();
 
-        Console.Clear();
 
         //WebDriver webDriver = new WebDriver();
         //webDriver.Login();
 
 
-        //Credentials.CheckCredentials();
+        Credentials.CheckCredentials();
 
-        //await WFMarketTask.TokenSignIn();
-        //await WFMarketTask.GetItemId();
+        await WFMarketTask.TokenSignIn();
+        string corpusScene = await WFMarketTask.GetItemId("corpus_ice_planet_wreckage_scene");
+        Log($"Corpus ID: {corpusScene}");
+
+        Log("Enter something to send your order");
+        Console.ReadLine();
+        await WFMarketTask.CreateOrder( corpusScene );
+        
 
         Log("Reached end");
         Console.ReadLine();

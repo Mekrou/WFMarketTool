@@ -12,6 +12,7 @@ namespace WFMarketTool
     internal class WFMarketTask
     {
         static HttpClient httpClient;
+        private readonly static string apiBaseUrl = "https://api.warframe.market/v1";
 
         /// <summary>
         /// Initializes HttpClient to have correct authorization required by WFMarket api.
@@ -39,11 +40,13 @@ namespace WFMarketTool
 
             HttpContent authContent = new StringContent(authPayload, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync("https://api.warframe.market/v1/auth/signin", authContent);
-            
+
 
             if (response.IsSuccessStatusCode)
             {
                 Log("Successfully logged in to WFMarket!");
+                Log("Response");
+                Log(response.ToString());
             }
             else
             {
@@ -51,7 +54,7 @@ namespace WFMarketTool
             }
         }
 
-        public async static Task GetItemId()
+        public async static Task GetAugmentModId()
         {
             try
             {
@@ -78,6 +81,59 @@ namespace WFMarketTool
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async static Task<string> GetItemId(string item_name)
+        {
+            HttpResponseMessage getItemData = await httpClient.GetAsync($"https://api.warframe.market/v1/items/{item_name}");
+            string json = await getItemData.Content.ReadAsStringAsync();
+            JObject jsonObject = JObject.Parse(json);
+            string itemId = (string)jsonObject["payload"]["item"]["id"];
+            return itemId;
+        }
+
+        public async static Task CreateOrder(string itemId)
+        {
+            Object payload = new
+            {
+                item = "59e203ce115f1d887cfd7ac6",
+                order_type = "sell",
+                platinum = 12,
+                quantity = 5,
+                visible = true,
+                rank = 3,
+                subtype = "flawless"
+            };
+
+            string jsonPayload = JsonConvert.SerializeObject(payload);
+
+
+            Log(jsonPayload);
+
+            StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+
+            string token = Credentials.GetApiAuthToken();
+            
+
+            HttpResponseMessage response = await httpClient.PostAsync(apiBaseUrl + "/profile/orders", content);
+
+            Console.WriteLine("Request:");
+            Console.WriteLine(await content.ReadAsStringAsync());
+
+            
+
+            Console.WriteLine("Response:");
+            Console.WriteLine(await response.Content.ReadAsStringAsync());
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Order successfully created.");
+            }
+            else
+            {
+                Console.WriteLine($"Request failed with status code {response.StatusCode}");
             }
         }
     }
