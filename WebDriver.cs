@@ -91,7 +91,5 @@ namespace WFMarketTool
             // At some point, this will break..
             jsExecutor.ExecuteScript("document.querySelector(\".btn.btn__primary--L8HyD\").click()");
         }
-
-       
     }
 }

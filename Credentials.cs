@@ -16,6 +16,9 @@ namespace WFMarketTool
         public static string? password { get; set; }
         public static string? email { get; set; }
 
+        /// <summary>
+        /// User's WFMarket credentials are stored in Credentials.json. We use this method to grab the required email/password for authentication.
+        /// </summary>
         public static void LoadCredentialsFromJson()
         {
             string jsonString = File.ReadAllText("Credentials.json");
@@ -24,6 +27,9 @@ namespace WFMarketTool
             email = credentials.Email;
         }
 
+        /// <summary>
+        /// Checks if user's credentials are already stored. If not, prompts user to enter them.
+        /// </summary>
         public static void CheckCredentials()
         {
             if (File.Exists("Credentials.json"))
