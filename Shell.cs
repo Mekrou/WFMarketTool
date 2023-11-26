@@ -22,10 +22,11 @@ namespace WFMarketTool
             Loop
         }
 
+        private string? _feedbackMessage;
         private bool _firstDisplay = true;
         private string _shellPrompt = "> ";
         public State state;
-        public string[] consoleArgs;
+        public string[]? consoleArgs;
 
         public void Display()
         {
@@ -38,6 +39,8 @@ namespace WFMarketTool
 
             Console.Clear();
             ConsoleOutput.DisplayAsciiBanner();
+            ConsoleOutput.WriteBottomText(_feedbackMessage, ConsoleColor.Red);
+            _feedbackMessage = null;
             Console.Write(_shellPrompt);
         }
 
@@ -45,11 +48,11 @@ namespace WFMarketTool
         {
             string? input = Console.ReadLine();
 
-            // Check against database of valid command in Evaluate()
-            if (input == null)
+            // We check against database of valid command in Evaluate(),
+            // this is just if they enter nothing...
+            if (input == "")
             {
-                Console.WriteLine("Command not recognized");
-                Program.Log("Input returned null");
+                _feedbackMessage = "Unrecognized command.";
             }
 
             // separates user input based on spaces
@@ -85,7 +88,6 @@ namespace WFMarketTool
         public ShellStateMachine()
         {
             shell = new Shell();
-
         }
 
         public void Activate()
