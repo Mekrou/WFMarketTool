@@ -93,39 +93,22 @@ namespace WFMarketTool
             return itemId;
         }
 
-        public async static Task CreateOrder(string itemId)
+        public async static Task CreateOrder(string itemName)
         {
+            string itemId = await GetItemId(itemName);
             Object payload = new
             {
-                item = "59e203ce115f1d887cfd7ac6",
+                item = itemId,
                 order_type = "sell",
                 platinum = 12,
                 quantity = 5,
                 visible = true,
-                rank = 3,
-                subtype = "flawless"
             };
 
             string jsonPayload = JsonConvert.SerializeObject(payload);
-
-
-            Log(jsonPayload);
-
             StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-
-            string token = Credentials.GetApiAuthToken();
-            
-
             HttpResponseMessage response = await httpClient.PostAsync(apiBaseUrl + "/profile/orders", content);
-
-            Console.WriteLine("Request:");
-            Console.WriteLine(await content.ReadAsStringAsync());
-
-            
-
-            Console.WriteLine("Response:");
-            Console.WriteLine(await response.Content.ReadAsStringAsync());
 
             if (response.IsSuccessStatusCode)
             {

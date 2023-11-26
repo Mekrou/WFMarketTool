@@ -1,20 +1,13 @@
-﻿using Newtonsoft.Json;
-using System.Text;
-using WFMarketTool;
-using DustInTheWind.ConsoleTools.Controls.InputControls;
+﻿using WFMarketTool;
 using DustInTheWind.ConsoleTools;
 using DustInTheWind.ConsoleTools.Controls;
 using System.Runtime.CompilerServices;
-using Newtonsoft.Json.Linq;
-using DustInTheWind.ConsoleTools.CommandLine;
-using DustInTheWind.ConsoleTools.Controls.Menus;
-using System.Security.AccessControl;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        
+        WFMarketTask task = new WFMarketTask();
 
         CustomConsole.WriteLine(HorizontalAlignment.Center, "Welcome to WFMarketTool");
         HorizontalLine titleLine = new HorizontalLine
@@ -26,22 +19,22 @@ class Program
         titleLine.Display();
 
 
-        //WebDriver webDriver = new WebDriver();
-        //webDriver.Login();
-
-
         Credentials.CheckCredentials();
-
-        await WFMarketTask.TokenSignIn();
-        string corpusScene = await WFMarketTask.GetItemId("corpus_ice_planet_wreckage_scene");
-        Log($"Corpus ID: {corpusScene}");
-
-        Log("Enter something to send your order");
-        Console.ReadLine();
-        await WFMarketTask.CreateOrder( corpusScene );
         
+        WebDriver webdriver = new WebDriver();
+        webdriver.Login();
 
-        Log("Reached end");
+
+        //await WFMarketTask.TokenSignIn();
+        //string corpusScene = await WFMarketTask.GetItemId("corpus_ice_planet_wreckage_scene");
+        //Log($"Corpus ID: {corpusScene}");
+
+        //Log("Enter something to send your order");
+        //Console.ReadLine();
+        //await WFMarketTask.CreateOrder("corpus_ice_planet_wreckage_scene");
+
+
+        //Log("Reached end");
         Console.ReadLine();
     }
 
