@@ -12,7 +12,7 @@ namespace WFMarketTool
     /// <summary>
     /// Represents the environment where a REPL will be implemented to process user commands.
     /// </summary>
-    internal class Shell
+    public class Shell
     {
         public enum State
         {
@@ -22,13 +22,23 @@ namespace WFMarketTool
             Loop
         }
 
+        private bool _firstDisplay = true;
+        private string _shellPrompt = "> ";
         public State state;
         public string[] consoleArgs;
 
         public void Display()
         {
+            if (_firstDisplay)
+            {
+                Console.Write(_shellPrompt);
+                _firstDisplay = false;
+                return;
+            } 
+
             Console.Clear();
-            Console.Write("> ");
+            ConsoleOutput.DisplayAsciiBanner();
+            Console.Write(_shellPrompt);
         }
 
         public void Read()
@@ -46,12 +56,11 @@ namespace WFMarketTool
             consoleArgs = input.Split(' ');
         }
 
-
         /// <summary>
         /// Evaluates user input against database of commands in TODO: commands
         /// </summary>
         /// <returns>Whether or not user entered a valid command.</returns>
-        public bool Evaluate()
+        public bool isValidCommand()
         {
             //TODO check commands/args against database of known ones.
             foreach (string arg in consoleArgs)
@@ -62,20 +71,32 @@ namespace WFMarketTool
             //TODO remove this later plzz
             if (consoleArgs.Contains("batch")) { return true; } else { return false; }
         }
+
+        public bool areAllArgsValid()
+        {
+            return false;
+        }
     }
 
-    internal class ShellStateMachine
+    public class ShellStateMachine
     {
-        internal ShellStateMachine()
-        {
-            Shell shell = new Shell();
+        public Shell shell;
 
+        public ShellStateMachine()
+        {
+            shell = new Shell();
+
+        }
+
+        public void Activate()
+        {
             do
             {
                 shell.Display();
                 shell.Read();
-            } while (shell.Evaluate());
 
+                Program.Log($"Result of shell.isValidCommand(): {shell.isValidCommand()}");
+            } while (!(shell.isValidCommand()));
         }
     }
 

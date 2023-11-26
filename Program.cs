@@ -1,28 +1,21 @@
 ﻿using WFMarketTool;
-using DustInTheWind.ConsoleTools;
-using DustInTheWind.ConsoleTools.Controls;
 using System.Runtime.CompilerServices;
 
 class Program
 {
     static async Task Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         WFMarketTask task = new WFMarketTask();
 
-        CustomConsole.WriteLine(HorizontalAlignment.Center, "Welcome to WFMarketTool");
-        HorizontalLine titleLine = new HorizontalLine
-        {
-            Character = '*',
-            ForegroundColor = ConsoleColor.Cyan,
-            Margin = "0 0",
-        };
-        titleLine.Display();
-
+        ConsoleOutput.DisplayAsciiBanner();
+        ConsoleOutput.DisplayHelpSplash();
 
         Credentials.CheckCredentials();
 
         ShellStateMachine shellState = new ShellStateMachine();
-        
+        shellState.Activate();
+
         //WebDriver webdriver = new WebDriver();
         //webdriver.Login();
 
