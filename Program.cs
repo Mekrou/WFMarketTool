@@ -20,9 +20,11 @@ class Program
 
 
         Credentials.CheckCredentials();
+
+        ShellStateMachine shellState = new ShellStateMachine();
         
-        WebDriver webdriver = new WebDriver();
-        webdriver.Login();
+        //WebDriver webdriver = new WebDriver();
+        //webdriver.Login();
 
 
         //await WFMarketTask.TokenSignIn();

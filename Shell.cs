@@ -14,7 +14,7 @@ namespace WFMarketTool
     /// </summary>
     internal class Shell
     {
-        enum State
+        public enum State
         {
             Read,
             Evaluate,
@@ -22,37 +22,63 @@ namespace WFMarketTool
             Loop
         }
 
-        State state;
-        public static string[] consoleArgs;
+        public State state;
+        public string[] consoleArgs;
 
-        public static void Display()
+        public void Display()
         {
             Console.Clear();
             Console.Write("> ");
         }
 
-        public static void Read()
+        public void Read()
         {
             string? input = Console.ReadLine();
 
+            // Check against database of valid command in Evaluate()
             if (input == null)
             {
                 Console.WriteLine("Command not recognized");
+                Program.Log("Input returned null");
             }
 
             // separates user input based on spaces
             consoleArgs = input.Split(' ');
         }
 
-        public static void Evaluate()
+
+        /// <summary>
+        /// Evaluates user input against database of commands in TODO: commands
+        /// </summary>
+        /// <returns>Whether or not user entered a valid command.</returns>
+        public bool Evaluate()
         {
+            //TODO check commands/args against database of known ones.
             foreach (string arg in consoleArgs)
             {
                 Console.WriteLine(arg);
             }
-        }
 
+            //TODO remove this later plzz
+            if (consoleArgs.Contains("batch")) { return true; } else { return false; }
+        }
     }
+
+    internal class ShellStateMachine
+    {
+        internal ShellStateMachine()
+        {
+            Shell shell = new Shell();
+
+            do
+            {
+                shell.Display();
+                shell.Read();
+            } while (shell.Evaluate());
+
+        }
+    }
+
 
     public class CommandArgument
     {
