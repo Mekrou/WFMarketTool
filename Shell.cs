@@ -22,11 +22,20 @@ namespace WFMarketTool
             Loop
         }
 
-        private string? _feedbackMessage;
+        private static List<string>? _feedbackMessages = new List<string> { };
+        
         private bool _firstDisplay = true;
+        
         private string _shellPrompt = "> ";
+        
         public State state;
+        
         public string[]? consoleArgs;
+
+        public static void ResetFeedbackMessages()
+        {
+            _feedbackMessages.Clear();
+        }
 
         public void Display()
         {
@@ -39,8 +48,8 @@ namespace WFMarketTool
 
             Console.Clear();
             ConsoleOutput.DisplayAsciiBanner();
-            ConsoleOutput.WriteBottomText(_feedbackMessage, ConsoleColor.Red);
-            _feedbackMessage = null;
+            // Write Feedback text List
+            ConsoleOutput.WriteFeedBackText(_feedbackMessages);
             Console.Write(_shellPrompt);
         }
 
@@ -52,7 +61,11 @@ namespace WFMarketTool
             // this is just if they enter nothing...
             if (input == "")
             {
-                _feedbackMessage = "Unrecognized command.";
+                _feedbackMessages.Add("Unrecognized command.");
+                _feedbackMessages.Add("This is a test another line");
+                _feedbackMessages.Add("This is a test another line");
+                _feedbackMessages.Add("This is a test another line");
+                _feedbackMessages.Add("This is a test another line");
             }
 
             // separates user input based on spaces
