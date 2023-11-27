@@ -1,0 +1,16 @@
+{
+  "commands" : [
+    {
+      "name": "login",
+      "helptext": "info"
+    },
+    {
+      "name": "batch",
+      "helptext": "info"
+    },
+    {
+      "name": "listing",
+      "helptext": "info"
+    }
+  ]
+}

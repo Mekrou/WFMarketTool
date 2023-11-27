@@ -13,7 +13,7 @@ class Program
 
         Credentials.CheckCredentials();
 
-        ShellStateMachine shellState = new ShellStateMachine();
+        ShellController shellState = new ShellController();
         shellState.Activate();
 
         //WebDriver webdriver = new WebDriver();

@@ -71,7 +71,6 @@ namespace WFMarketTool
             foreach (string line in text)
             {
                 Console.WriteLine(line);
-                linesToBeWritten--;
             }
 
             Console.SetCursorPosition(initialCursorPosition.Item1, initialCursorPosition.Item2);

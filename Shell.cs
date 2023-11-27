@@ -1,11 +1,4 @@
-﻿using OpenQA.Selenium.DevTools.V117.DOM;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace WFMarketTool
 {
@@ -14,24 +7,14 @@ namespace WFMarketTool
     /// </summary>
     public class Shell
     {
-        public enum State
-        {
-            Read,
-            Evaluate,
-            Print,
-            Loop
-        }
-
-        private static List<string>? _feedbackMessages = new List<string> { };
+        public static List<string>? _feedbackMessages = new List<string> { };
         
         private bool _firstDisplay = true;
         
         private string _shellPrompt = "> ";
         
-        public State state;
-        
         public string[]? consoleArgs;
-
+       
         public static void ResetFeedbackMessages()
         {
             _feedbackMessages.Clear();
@@ -48,7 +31,8 @@ namespace WFMarketTool
 
             Console.Clear();
             ConsoleOutput.DisplayAsciiBanner();
-            // Write Feedback text List
+            
+            // Write any feedback we got from last input.
             ConsoleOutput.WriteFeedBackText(_feedbackMessages);
             Console.Write(_shellPrompt);
         }
@@ -59,13 +43,12 @@ namespace WFMarketTool
 
             // We check against database of valid command in Evaluate(),
             // this is just if they enter nothing...
+
+            Command.ReadCommandsFromJson();
+
             if (input == "")
             {
                 _feedbackMessages.Add("Unrecognized command.");
-                _feedbackMessages.Add("This is a test another line");
-                _feedbackMessages.Add("This is a test another line");
-                _feedbackMessages.Add("This is a test another line");
-                _feedbackMessages.Add("This is a test another line");
             }
 
             // separates user input based on spaces
@@ -91,63 +74,6 @@ namespace WFMarketTool
         public bool areAllArgsValid()
         {
             return false;
-        }
-    }
-
-    public class ShellStateMachine
-    {
-        public Shell shell;
-
-        public ShellStateMachine()
-        {
-            shell = new Shell();
-        }
-
-        public void Activate()
-        {
-            do
-            {
-                shell.Display();
-                shell.Read();
-
-                Program.Log($"Result of shell.isValidCommand(): {shell.isValidCommand()}");
-            } while (!(shell.isValidCommand()));
-        }
-    }
-
-
-    public class CommandArgument
-    {
-        public string? Name {  get; set; }
-        public bool? Required { get; set; }
-    }
-    public class Command
-    {
-        public string Alias { get; set; }
-        // How can I define required ARGS for a command? listing <add/remove> <item_name> <buy/sell> <price>
-        //                                               will only support prime parts atm
-    }
-    internal class Batch : Command
-    {
-        public Batch()
-        {
-            this.Alias = "batch";
-
-
-            List<CommandArgument> Args = new List<CommandArgument>();
-        }
-        internal class Toggle : CommandArgument
-        {
-            internal Toggle()
-            {
-                Name = "toggle";
-                Required = false;
-            }
-
-            public void Execute()
-            {
-                throw new NotImplementedException();
-            }
         }
     }
 }
