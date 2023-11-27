@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OpenQA.Selenium;
 using System.Collections;
 
 namespace WFMarketTool
@@ -36,9 +37,14 @@ namespace WFMarketTool
             /// </summary>
             [JsonProperty("helptext")]
             public string HelpText { get; set; }
-            
+
             /// <summary>
-            /// The possible/valid arguments of this command.
+            /// The possible/valid arguments of this command. The position in the outer list represents the valid arguments for that position.
+            /// Args[0] contains a lists of valid arguments for the first argument, after the command name. Example:
+            /// <br> > login Args[0] Args[1]</br> 
+            /// <br>Args[0]
+            /// contains ["email"], since that is the only valid argument in the first spot.
+            /// Args[1] contains ["password"], similarly. </br>
             /// </summary>
             [JsonProperty("args")]
             public List<List<string>> Args { get; set; }
@@ -71,6 +77,39 @@ namespace WFMarketTool
                 commandNames.Add(commandInfo.Name);
             }
             return commandNames;
+        }
+
+        /// <summary>
+        /// Loops through command master list and finds a Command by name.
+        /// </summary>
+        /// <param name="name">The name of the command to find.</param>
+        /// <returns>The CommandObject with the Name, Helptext, and Args info.</returns>
+        public static CommandObject? FindCommandFromName(string name)
+        {
+            foreach (CommandObject command in commands)
+            {
+                if (command.Name == name)
+                {
+                    return command;
+                }     
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns>A list of valid argument names for the given command.</returns>
+        public static List<string> GetPossibleArgs(string command)
+        {
+            throw new NotImplementedException();
+            CommandObject commandObject = FindCommandFromName(command);
+
+            foreach (List<string> possibleArgs in commandObject.Args)
+            {
+
+            }
         }
     }
 }

@@ -8,13 +8,22 @@ namespace WFMarketTool
     /// </summary>
     public static class Shell
     {
+        /// <summary>
+        /// A list of messages that will be shown to the user after they Enter input.
+        /// </summary>
         public static List<string> _feedbackMessages;
 
         private static bool _firstDisplay = true;
 
+        /// <summary>
+        /// The prompt the user sees when entering commands.
+        /// </summary>
         private static string _shellPrompt = "> ";
 
-        public static string[]? consoleArgs;
+        /// <summary>
+        /// An array of the commands that were last entered by the user.
+        /// </summary>
+        public static string[]? input;
 
         static Shell()
         {
@@ -46,23 +55,23 @@ namespace WFMarketTool
 
         public static void Read()
         {
-            string? input = Console.ReadLine();
+            string? dirtyInput = Console.ReadLine();
 
             // We check against database of valid command in Evaluate(),
             // this is just if they enter nothing...
 
-            if (input == "")
+            if (dirtyInput == "")
             {
                 _feedbackMessages.Add("Unrecognized command.");
             }
-            else if (input == null)
+            else if (dirtyInput == null)
             {
                 _feedbackMessages.Add("Input recognized as null");
-                input = "";
+                dirtyInput = "";
             }
 
             // separates user input based on spaces
-            consoleArgs = input.Split(' ');
+            Shell.input = dirtyInput.Split(' ');
         }
 
         /// <summary>
@@ -79,20 +88,20 @@ namespace WFMarketTool
             List<string> commands = CommandService.GetCommandsList();
             foreach (string command in commands)
             {
-                if (command == consoleArgs[0])
+                if (command == input[0])
                 {
                     validName = true;
-                    _feedbackMessages.Add($"{consoleArgs[0]} passed first check.");
+                    _feedbackMessages.Add($"{input[0]} passed first check.");
                     break;
                 }
             }
 
             // Check Two
             //TODO check commands/args against database of known ones.
-            ValidateArgs();
 
             if (validName)
             {
+                ValidateArgs();
                 return true;
             }
             else
@@ -103,7 +112,33 @@ namespace WFMarketTool
 
         private static void ValidateArgs()
         {
-            throw new NotImplementedException();
+            Dictionary<int, bool> argValid = new Dictionary<int, bool>();
+
+            // Get list of arguments
+            CommandObject command = CommandService.FindCommandFromName(input[0]);
+            List<List<string>> Args = command.Args;
+
+            for(int i = 0; i < Args.Count; i++)
+            {
+                foreach (string arg in Args[i])
+                {
+                    try
+                    {
+                        if (arg == input[i + 1])
+                        {
+                            argValid.Add(i, true);
+                        }
+                        else
+                        {
+                            argValid.Add(i, false);
+                        }
+                    }
+                    catch (IndexOutOfRangeException ex) 
+                    {
+                        Shell._feedbackMessages.Add(ex.Message);
+                    }
+                }
+            }
         }
     }
 }
