@@ -2,15 +2,34 @@
   "commands" : [
     {
       "name": "login",
-      "helptext": "info"
+      "helptext": "info",
+      "args": [
+        [ "email" ],
+        ["password"]
+      ]
     },
     {
       "name": "batch",
-      "helptext": "info"
+      "helptext": "info",
+      "args": [
+        [ "email" ],
+        [ "password" ]
+      ]
     },
     {
       "name": "listing",
-      "helptext": "info"
+      "helptext": "info",
+      "args": [
+        [ "email" ],
+        [ "password" ]
+      ]
+    },
+    {
+      "name": "status",
+      "helptext": "Sets the users WFMarket status",
+      "args": [
+        [ "offline", "in_game", "online" ]
+      ]
     }
   ]
 }

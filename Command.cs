@@ -1,6 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
-using static WFMarketTool.CommandController;
+using static WFMarketTool.CommandService;
 
 namespace WFMarketTool
 {

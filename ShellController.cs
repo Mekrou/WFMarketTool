@@ -16,9 +16,12 @@ namespace WFMarketTool
         {
             do
             {
-                Shell.Display();
+                Shell.PromptInput();
                 Shell.Read();
             } while (!(Shell.isValidCommand()));
+
+            ConsoleOutput.WriteFeedBackText(Shell._feedbackMessages);
+
         }
     }
 }

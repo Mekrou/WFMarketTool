@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using static WFMarketTool.CommandController;
+using static WFMarketTool.CommandService;
 
 namespace WFMarketTool
 {
@@ -8,17 +8,18 @@ namespace WFMarketTool
     /// </summary>
     public static class Shell
     {
-        public static List<string>? _feedbackMessages = new List<string> { };
-        
+        public static List<string> _feedbackMessages;
+
         private static bool _firstDisplay = true;
-        
+
         private static string _shellPrompt = "> ";
-        
+
         public static string[]? consoleArgs;
-       
+
         static Shell()
         {
-            CommandController.ReadCommandsFromJson();
+            _feedbackMessages = new List<string>(); 
+            CommandService.ReadCommandsFromJson();
         }
 
         public static void ResetFeedbackMessages()
@@ -26,18 +27,18 @@ namespace WFMarketTool
             _feedbackMessages.Clear();
         }
 
-        public static void Display()
+        public static void PromptInput()
         {
             if (_firstDisplay)
             {
                 Console.Write(_shellPrompt);
                 _firstDisplay = false;
                 return;
-            } 
+            }
 
             Console.Clear();
             ConsoleOutput.DisplayAsciiBanner();
-            
+
             // Write any feedback we got from last input.
             ConsoleOutput.WriteFeedBackText(_feedbackMessages);
             Console.Write(_shellPrompt);
@@ -54,6 +55,11 @@ namespace WFMarketTool
             {
                 _feedbackMessages.Add("Unrecognized command.");
             }
+            else if (input == null)
+            {
+                _feedbackMessages.Add("Input recognized as null");
+                input = "";
+            }
 
             // separates user input based on spaces
             consoleArgs = input.Split(' ');
@@ -65,39 +71,39 @@ namespace WFMarketTool
         /// <returns>Whether or not user entered a valid command.</returns>
         public static bool isValidCommand()
         {
+            bool validName = false;
+
+
             // Check One
             // Is first argument a valid name?
-            List<string> commands = CommandController.GetCommandsList();
+            List<string> commands = CommandService.GetCommandsList();
             foreach (string command in commands)
             {
-                if (!(command == consoleArgs[0]))
+                if (command == consoleArgs[0])
                 {
-                    return false;
-                }
-                else
-                {
+                    validName = true;
                     _feedbackMessages.Add($"{consoleArgs[0]} passed first check.");
                     break;
                 }
             }
 
             // Check Two
-
-
-
             //TODO check commands/args against database of known ones.
-            foreach (string arg in consoleArgs)
-            {
-                Console.WriteLine(arg);
-            }
+            ValidateArgs();
 
-            //TODO remove this later plzz
-            if (consoleArgs.Contains("batch")) { return true; } else { return false; }
+            if (validName)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public static bool areAllArgsValid()
+        private static void ValidateArgs()
         {
-            return false;
+            throw new NotImplementedException();
         }
     }
 }
