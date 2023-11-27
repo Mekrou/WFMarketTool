@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using static WFMarketTool.CommandController;
 
 namespace WFMarketTool
 {
@@ -44,7 +45,12 @@ namespace WFMarketTool
             // We check against database of valid command in Evaluate(),
             // this is just if they enter nothing...
 
-            Command.ReadCommandsFromJson();
+            CommandController.ReadCommandsFromJson();
+            List<string> commands = CommandController.GetCommandsList();
+            foreach (string command in commands)
+            {
+                _feedbackMessages.Add(command);
+            }
 
             if (input == "")
             {
