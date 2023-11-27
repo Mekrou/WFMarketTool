@@ -11,15 +11,5 @@ namespace WFMarketTool
         public Command() { 
         
         }
-
-        internal static bool isValid()
-        {
-            // Get list of valid commands
-
-            // Loop through each, checking if consoleArg[0] matches any
-            // return result
-
-            return false;
-        }
     }
 }

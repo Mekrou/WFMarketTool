@@ -20,23 +20,6 @@ namespace WFMarketTool
             this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(25);
         }
 
-        public void StartDriver()
-        {
-            IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
-            IWebElement button = (IWebElement) jsExecutor.ExecuteScript("return document.querySelector(\".btn.btn__primary--L8HyD\")");
-            button.Click();
-
-            Console.ReadLine();
-
-            // At some point, this will break..
-            jsExecutor.ExecuteScript("document.querySelector(\".btn.btn__primary--L8HyD\").click()");
-            
-
-            Console.ReadLine();
-
-            driver.Close();
-        }
-
         public void Login()
         {
             driver.Navigate().GoToUrl("https://warframe.market/auth/signin");
@@ -54,7 +37,6 @@ namespace WFMarketTool
 
                     if (Credentials.email != null)
                     {
-                        Console.WriteLine($"Password {Credentials.password}\nEmail {Credentials.email}");
                         emailInput.SendKeys(Credentials.email);
                         passInput.SendKeys(Credentials.password);
                         PressLoginButton();

@@ -13,11 +13,13 @@ class Program
 
         Credentials.CheckCredentials();
 
+        //WebDriver webdriver = new WebDriver();
+        //webdriver.Login();
+
         ShellController shellState = new ShellController();
         shellState.Activate();
 
-        //WebDriver webdriver = new WebDriver();
-        //webdriver.Login();
+        
 
 
         //await WFMarketTask.TokenSignIn();
