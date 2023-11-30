@@ -28,7 +28,6 @@ namespace WFMarketTool
         static Shell()
         {
             _feedbackMessages = new List<string>(); 
-            CommandService.ReadCommandsFromJson();
         }
 
         public static void ResetFeedbackMessages()
@@ -85,7 +84,7 @@ namespace WFMarketTool
 
             // Check One
             // Is first argument a valid name?
-            List<string> commands = CommandService.GetCommandsList();
+            List<string> commands = CommandService.GetCommandNames();
             foreach (string command in commands)
             {
                 if (command == input[0])
@@ -96,49 +95,40 @@ namespace WFMarketTool
                 }
             }
 
+            return validName;
             // Check Two
             //TODO check commands/args against database of known ones.
-
-            if (validName)
-            {
-                ValidateArgs();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
-        private static void ValidateArgs()
-        {
-            Dictionary<int, bool> argValid = new Dictionary<int, bool>();
+        //private static void ValidateArgs()
+        //{
+        //    Dictionary<int, bool> argValid = new Dictionary<int, bool>();
 
-            // Get list of arguments
-            CommandObject command = CommandService.FindCommandFromName(input[0]);
-            List<List<string>> Args = command.Args;
+        //    // Get list of arguments
+        //    CommandObject command = CommandService.FindCommandFromName(input[0]);
+        //    List<List<string>> Args = command.Args;
 
-            for(int i = 0; i < Args.Count; i++)
-            {
-                foreach (string arg in Args[i])
-                {
-                    try
-                    {
-                        if (arg == input[i + 1])
-                        {
-                            argValid.Add(i, true);
-                        }
-                        else
-                        {
-                            argValid.Add(i, false);
-                        }
-                    }
-                    catch (IndexOutOfRangeException ex) 
-                    {
-                        Shell._feedbackMessages.Add(ex.Message);
-                    }
-                }
-            }
-        }
+        //    for(int i = 0; i < Args.Count; i++)
+        //    {
+        //        foreach (string arg in Args[i])
+        //        {
+        //            try
+        //            {
+        //                if (arg == input[i + 1])
+        //                {
+        //                    argValid.Add(i, true);
+        //                }
+        //                else
+        //                {
+        //                    argValid.Add(i, false);
+        //                }
+        //            }
+        //            catch (IndexOutOfRangeException ex) 
+        //            {
+        //                Shell._feedbackMessages.Add(ex.Message);
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
